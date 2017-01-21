@@ -46,12 +46,7 @@
   <body>
     <div id="right-panel">
       <div id="inputs">
-        <pre>
-var origin1 = {lat: 55.930, lng: -3.118};
-var origin2 = 'Greenwich, England';
-var destinationA = 'Stockholm, Sweden';
-var destinationB = {lat: 50.087, lng: 14.421};
-        </pre>
+        
       </div>
       <div>
         <strong>Results</strong>
@@ -64,10 +59,11 @@ function initMap() {
   var bounds = new google.maps.LatLngBounds;
   var markersArray = [];
 
-  var bus = {lat: 36.9195, lng: -6.07837};
+  var bus = {lat: 36.919407, lng: -6.075759};
   var origin2 = 'Greenwich, England';
   var parada1 = {lat: 36.915783, lng: -6.080527};
-  var destinationB = {lat: 50.087, lng: 14.421};
+  var parada2 = {lat: 36.919725, lng: -6.070442};
+  var parada3 = {lat: 36.925507, lng: -6.072609};
 
   var destinationIcon = 'https://chart.googleapis.com/chart?' +
       'chst=d_map_pin_letter&chld=D|FF0000|000000';
@@ -82,7 +78,7 @@ function initMap() {
   var service = new google.maps.DistanceMatrixService;
   service.getDistanceMatrix({
     origins: [bus],
-    destinations: [parada1],
+    destinations: [parada1,parada2,parada3],
     travelMode: google.maps.TravelMode.DRIVING,
     unitSystem: google.maps.UnitSystem.METRIC,
     avoidHighways: false,
